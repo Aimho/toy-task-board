@@ -1,0 +1,17 @@
+overwrite: true
+schema:
+  - ${HASURA_URL}:
+      headers:
+        X-HASURA-ADMIN-SECRET: ${HASURA_ADMIN_SECRET}
+documents: "src/graphql/**/*.graphql"
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      whithHOC: false
+      withComponents: false
+      withHooks: true
+      preResolveTypes: true

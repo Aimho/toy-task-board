@@ -6,15 +6,19 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import config from "./config";
+import Provider from "components/Provider";
 
 firebase.initializeApp(config.firebase);
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
